@@ -1,0 +1,31 @@
+Imported: 
+   import tkinter as tk
+   from tkinter import filedialog
+   from PIL import Image, ImageTk
+   import pytesseract
+ 
+   tkinter: Imports the Tkinter library for creating GUIs.
+   filedialog: Specifically imports the filedialog module from Tkinter, which is used to create file dialog boxes for selecting files.
+   PIL: Imports the Python Imaging Library (PIL) modules for working with images.
+   pytesseract: Imports the pytesseract module, which provides an interface to Google's Tesseract-OCR Engine.
+
+  Function Definitions:
+   display_image(image_path): Displays an image specified by the 'image_path' parameter on a Tkinter label widget named 'image_label'.
+   select_image(): Opens a file dialog box for selecting an image file. If an image is selected, it displays the image and updates the file path label ('file_path_label').
+   perform_ocr(image_path, lang="eng"): Performs Optical Character Recognition (OCR) on the image specified by 'image_path' using Tesseract. It returns the extracted text.
+   show_ocr_result(): Retrieves the selected image path and OCR language, performs OCR on the image, and displays the OCR result on a label widget ('result_text_label').
+
+  GUI Setup Includes:
+     root = tk.Tk(): Creates the main Tkinter window.
+     root.title("OCR"): Sets the title of the window.
+   For Widgets:
+     "image_label", "file_path_label", and "result_text_label" are labels used for displaying images, file paths, and OCR results, respectively.
+      select_button - button used to trigger the image selection process.
+      ocr_button - button used to trigger the OCR process.
+      language_var -  Tkinter variable used to store the selected OCR language.
+      language_dropdown - an OptionMenu widget for selecting the OCR language from a dropdown menu.
+
+  Event Loop:
+      root.mainloop(): Starts the Tkinter event loop, which waits for user interactions and responds to events such as button clicks and window resizing.
+
+ Overall Users can select an image file, choose an OCR language, and trigger the OCR process. The extracted text is then displayed on the GUI.
